@@ -1,4 +1,4 @@
 
-public class PaymentType {
+public abstract class PaymentType {
 	
 }

@@ -7,7 +7,7 @@ public class Receipt {
 	private ArrayList<Product> itemsOrdered;
 	private double subtotal;
 	private double tax;
-	private double grandTotal;
+	static double grandTotal;
 
 	/**
 	 * Default constructor
@@ -104,7 +104,7 @@ public class Receipt {
 	/**
 	 * @return the grandTotal
 	 */
-	public double getGrandTotal() {
+	public static double getGrandTotal() {
 		calcPrice();
 		return grandTotal;
 	}
