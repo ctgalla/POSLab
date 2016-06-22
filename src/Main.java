@@ -57,7 +57,11 @@ public class Main {
 					String garbage = scan.nextLine();
 					System.out.println("You have chosen " + productList.get(0));
 					// Add to shopping cart here!!
-
+					garbage =scan.nextLine();
+					System.out.print("Quantity: ");
+					double quantity=scan.nextInt();
+					receipt.getQuantity(quantity);
+					receipt.addProduct(productList.getPrice(0));
 					
 
 					break;
@@ -66,7 +70,7 @@ public class Main {
 					garbage = scan.nextLine();
 					System.out.println("You have chosen " + productList.get(1));
 					// Add to shopping cart here!!
-
+					receipt.addProduct(productList.get(1));
 					
 
 					break;
@@ -74,7 +78,7 @@ public class Main {
 					garbage = scan.nextLine();
 					System.out.println("You have chosen " + productList.get(2));
 					// Add to shopping cart here!!
-
+					receipt.addProduct(productList.get(2));
 					
 
 					break;
@@ -82,63 +86,63 @@ public class Main {
 					garbage = scan.nextLine();
 					System.out.println("You have chosen " + productList.get(3));
 					// Add to shopping cart here!!
-
+					receipt.addProduct(productList.get(3));
 					
 					break;
 				case 5:
 					garbage = scan.nextLine();
 					System.out.println("You have chosen " + productList.get(4));
 					// Add to shopping cart here!!
-
+					receipt.addProduct(productList.get(4));
 					
 					break;
 				case 6:
 					garbage = scan.nextLine();
 					System.out.println("You have chosen " + productList.get(5));
 					// Add to shopping cart here!!
-
+					receipt.addProduct(productList.get(5));
 					
 					break;
 				case 7:
 					garbage = scan.nextLine();
 					System.out.println("You have chosen " + productList.get(6));
 					// Add to shopping cart here!!
-
+					receipt.addProduct(productList.get(6));
 					
 					break;
 				case 8:
 					garbage = scan.nextLine();
 					System.out.println("You have chosen " + productList.get(7));
 					// Add to shopping cart here!!
-
+					receipt.addProduct(productList.get(7));
 				
 					break;
 				case 9:
 					garbage = scan.nextLine();
 					System.out.println("You have chosen " + productList.get(8));
 					// Add to shopping cart here!!
-
+					receipt.addProduct(productList.get(8));
 					
 					break;
 				case 10:
 					garbage = scan.nextLine();
 					System.out.println("You have chosen " + productList.get(9));
 					// Add to shopping cart here!!
-
+					receipt.addProduct(productList.get(9));
 				
 					break;
 				case 11:
 					garbage = scan.nextLine();
 					System.out.println("You have chosen " + productList.get(10));
 					// Add to shopping cart here!!
-
+					receipt.addProduct(productList.get(10));
 					
 					break;
 				case 12:
 					garbage = scan.nextLine();
 					System.out.println("You have chosen " + productList.get(11));
 					// Add to shopping cart here!!
-
+					receipt.addProduct(productList.get(11));
 				
 					break;
 				}

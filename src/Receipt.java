@@ -1,18 +1,20 @@
 
 import java.util.ArrayList;
 
-public class Receipt {
+public class Receipt extends Product{
 
 	private static final double SALESTAX = 0.06;
 	private ArrayList<Product> itemsOrdered;
 	private double subtotal;
 	private double tax;
 	static double grandTotal;
-
+	private  double quantity;
+	private static double price;
 	/**
 	 * Default constructor
 	 */
 	public Receipt() {
+		super(name, category, price);
 		itemsOrdered = new ArrayList<Product>();
 	}
 
@@ -22,13 +24,15 @@ public class Receipt {
 	public Receipt(ArrayList<Product> itemsOrdered) {
 		this.itemsOrdered = itemsOrdered;
 	}
-
+	
 	/**
 	 * @param product
 	 */
-	public void addProduct(Product product) {
-		itemsOrdered.add(product);
-
+	public void addProduct(double price, double quantity) {
+		this.price = price;
+		this.quantity = quantity;
+		quantity=getQuantity(quantity);
+		subtotal += (price * quantity);
 	}
 
 	/**
@@ -37,7 +41,16 @@ public class Receipt {
 	public void addProducts(ArrayList<Product> itemsOrdered) {
 		itemsOrdered.addAll(itemsOrdered);
 	}
+	
+	public double getQuantity(double quantity){
+		return quantity;
+	}
+	
+	public  void setQuantity(double q){
+		q=quantity;
+	}
 
+	
 	/**
 	 * calculate subtotal tax and grand total and stores values internally user
 	 * must call appropriate getter methods to access calculated values
@@ -45,7 +58,7 @@ public class Receipt {
 	private void calcPrice() {
 		// calculate subtotal
 		for (Product prod : itemsOrdered) {
-			subtotal = subtotal + (prod.getPrice() * prod.getQuantity());
+			subtotal += (prod.getPrice() * getQuantity(quantity));
 		}
 		// calculate tax
 		tax = subtotal * SALESTAX;
