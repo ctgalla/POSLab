@@ -33,8 +33,8 @@ public class Main {
 				 }  catch (IOException e) {
 				        System.out.println(e); 
 			 }
-				String done = "no";
-				while (Character.toLowerCase(done.charAt(0)) == ('n')) {
+				boolean done = false;
+				while (!done) {
 				int timesLooped = 0;
 				int choiceCounter = 0;
 				if (timesLooped < 0) {
@@ -67,6 +67,7 @@ public class Main {
 		        		//Implement Checkout
 		        		//add to bill
 		        		//code here
+		        		done = true;
 		        	} 
 		        	break;
 		        	
@@ -81,6 +82,7 @@ public class Main {
 		        		//Implement Checkout
 		        		//add to bill
 		        		//code here
+		        		done = true;
 		        	} 
 		        	break;
 		        case 3:
@@ -94,6 +96,7 @@ public class Main {
 		        		//Implement Checkout
 		        		//add to bill
 		        		//code here
+		        		done = true;
 		        	}
 		        	break;
 		        case 4:
@@ -107,6 +110,7 @@ public class Main {
 		        		//Implement Checkout
 		        		//add to bill
 		        		//code here
+		        		done = true;
 		        	} 
 		        	break;
 		        case 5:
@@ -120,6 +124,7 @@ public class Main {
 		        		//Implement Checkout
 		        		//add to bill
 		        		//code here
+		        		done = true;
 		        	} 
 		        	break;
 		        case 6:
@@ -133,6 +138,7 @@ public class Main {
 		        		//Implement Checkout
 		        		//add to bill
 		        		//code here
+		        		done = true;
 		        	} 
 		        	break;
 		        case 7:
@@ -146,6 +152,7 @@ public class Main {
 		        		//Implement Checkout
 		        		//add to bill
 		        		//code here
+		        		done = true;
 		        	} 
 		        	break;
 		        case 8:
@@ -159,6 +166,7 @@ public class Main {
 		        		//Implement Checkout
 		        		//add to bill
 		        		//code here
+		        		done = true;
 		        	} 
 		        	break;
 		        case 9:
@@ -172,6 +180,7 @@ public class Main {
 		        		//Implement Checkout
 		        		//add to bill
 		        		//code here
+		        		done = true;
 		        	} 
 		        	break;
 		        case 10:
@@ -185,6 +194,7 @@ public class Main {
 		        		//Implement Checkout
 		        		//add to bill
 		        		//code here
+		        		done = true;
 		        	} 
 		        	break;
 		        case 11:
@@ -198,6 +208,7 @@ public class Main {
 		        		//Implement Checkout
 		        		//add to bill
 		        		//code here
+		        		done = true;
 		        	} 
 		        	break;
 		        case 12:
@@ -211,10 +222,12 @@ public class Main {
 		        		//Implement Checkout
 		        		//add to bill
 		        		//code here
-		        	} 
+		        	done = true;
 		        	break;
+		        	}
 		     } 
 	     }      
+				scan.close();
 	} 
 }
 
