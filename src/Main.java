@@ -12,13 +12,13 @@ public class Main {
 		Scanner scan = new Scanner(System.in);
 		boolean newOrder;
 		boolean goReceipt = false;
-		boolean plusProduct = false;
+		boolean plusProduct;
 
 		// loop for a complete transaction cycle
 		do {
 
 			// loop for shopping cart/receipt
-			do {
+			while(plusProduct= true){
 
 				// Present Menu from ArrayList- Products
 
@@ -28,19 +28,19 @@ public class Main {
 
 				System.out.println("Choose Quantity:");
 				int quantity = scan.nextInt();
-
+			
 				// set up new receipt/shopping cart
 				Receipt receipt = new Receipt();
-
+				
 				// Ask to chose another product or checkout or new transaction
 				System.out.println("New transaction? (N) \n Another product?(P) \n Checkout (C)");
+				
 				// add Validator
-				String continu = scan.nextLine();
+				String continu = scan.next();
 				if (continu.equalsIgnoreCase("N")) {
-					// reset Shoppingcart array list
+					// reset receipt array list
 					// receipt.reset()
 					newOrder = true;
-
 				} else if (continu.equalsIgnoreCase("P")) {
 					// build arraylist in receipt and save
 					plusProduct = true;
@@ -48,8 +48,10 @@ public class Main {
 					plusProduct = false;
 					goReceipt = true;
 				}
-			} while (plusProduct = false);
-
+			}
+	
+		
+		
 			///////////////////////////////////////////////////
 			while (goReceipt = true) {
 				// Present the price, ask for form of payment or to start over
