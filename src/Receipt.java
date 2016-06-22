@@ -117,7 +117,6 @@ public class Receipt {
 	 */
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "Subtotal: " + subtotal + "\nTax: " + tax +"\nTotal: " + grandTotal;
 	}
 	

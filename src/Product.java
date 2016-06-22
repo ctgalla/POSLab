@@ -1,4 +1,7 @@
-<<<<<<< HEAD
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
 public class Product {
 	private String name;
 	private String category;
@@ -53,20 +56,8 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-}
-=======
 
-public class Product {
-
-	public double getPrice() {
-		// TODO Auto-generated method stub
+	public double getQuantity() {
 		return 0;
 	}
-
-	public int getQuantity() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 }
->>>>>>> 7489c3751ed09e6c3c052bb22c50d040dbde8c57

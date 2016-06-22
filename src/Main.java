@@ -9,8 +9,9 @@ import java.util.Scanner;
 
 
 public class Main {
+	static Scanner scan = new Scanner(System.in);
 	public static void main(String[] args) {
-				Scanner scan = new Scanner(System.in);
+				
 				Path productsPath = Paths.get("products.csv");
 				File productsFile = productsPath.toFile();
 				ArrayList<Product> productList = new ArrayList<Product> ();
@@ -31,34 +32,190 @@ public class Main {
 			    		in.close();
 				 }  catch (IOException e) {
 				        System.out.println(e); 
-				        int choice = scan.nextInt();
-				        switch(choice) {
-				        case 1:
-				        	break;
-				        case 2:
-				        	break;
-				        case 3:
-				        	break;
-				        case 4:
-				        	break;
-				        case 5:
-				        	break;
-				        case 6:
-				        	break;
-				        case 7:
-				        	break;
-				        case 8:
-				        	break;
-				        case 9:
-				        	break;
-				        case 10:
-				        	break;
-				        case 11:
-				        	break;
-				        case 12:
-				        	break;
 			 }
-		} 
-	}
+				String done = "no";
+				while (Character.toLowerCase(done.charAt(0)) == ('n')) {
+				int timesLooped = 0;
+				int choiceCounter = 0;
+				if (timesLooped < 0) {
+					System.out.println("What can I make for you today?\n");
+					timesLooped++;
+			        for (Product p: productList) {
+			        	choiceCounter++;
+						System.out.println(choiceCounter + ": " + p);//implicit call to toString();
+					}
+				} else {
+					System.out.println("What else can I get for you, today?\n");
+					timesLooped++;
+			        for (Product p: productList) {
+			        	choiceCounter++;
+						System.out.println(choiceCounter + ": " + p);//implicit call to toString();
+					}
+				}
+		        System.out.print("Make your choice by selecting a number from 1 - 12: ");
+		        int choice = scan.nextInt();
+		        
+		        switch(choice) {
+		        case 1:
+		        	String garbage = scan.nextLine();
+		        	System.out.println("You have chosen " + productList.get(0));
+		        	//Add to shopping cart here!!
+		        	System.out.println("Will that be all for you today? (Please enter Yes(Y) or No(N))");
+		        	
+		        	String continueAnswer = scan.nextLine();
+		        	if (Character.toLowerCase(continueAnswer.charAt(0)) == ('y')) {
+		        		//Implement Checkout
+		        		//add to bill
+		        		//code here
+		        	} 
+		        	break;
+		        	
+		        case 2:
+		        	garbage = scan.nextLine();
+		        	System.out.println("You have chosen " + productList.get(1));
+		        	//Add to shopping cart here!!
+		        	System.out.println("Will that be all for you today? (Please enter Yes(Y) or No(N))");
+		        	
+		        	continueAnswer = scan.nextLine();
+		        	if (Character.toLowerCase(continueAnswer.charAt(0)) == ('y')) {
+		        		//Implement Checkout
+		        		//add to bill
+		        		//code here
+		        	} 
+		        	break;
+		        case 3:
+		        	garbage = scan.nextLine();
+		        	System.out.println("You have chosen " + productList.get(2));
+		        	//Add to shopping cart here!!
+		        	System.out.println("Will that be all for you today? (Please enter Yes(Y) or No(N))");
+		        	
+		        	continueAnswer = scan.nextLine();
+		        	if (Character.toLowerCase(continueAnswer.charAt(0)) == ('y')) {
+		        		//Implement Checkout
+		        		//add to bill
+		        		//code here
+		        	}
+		        	break;
+		        case 4:
+		        	garbage = scan.nextLine();
+		        	System.out.println("You have chosen " + productList.get(3));
+		        	//Add to shopping cart here!!
+		        	System.out.println("Will that be all for you today? (Please enter Yes(Y) or No(N))");
+		        	
+		        	continueAnswer = scan.nextLine();
+		        	if (Character.toLowerCase(continueAnswer.charAt(0)) == ('y')) {
+		        		//Implement Checkout
+		        		//add to bill
+		        		//code here
+		        	} 
+		        	break;
+		        case 5:
+		        	garbage = scan.nextLine();
+		        	System.out.println("You have chosen " + productList.get(4));
+		        	//Add to shopping cart here!!
+		        	System.out.println("Will that be all for you today? (Please enter Yes(Y) or No(N))");
+		        	
+		        	continueAnswer = scan.nextLine();
+		        	if (Character.toLowerCase(continueAnswer.charAt(0)) == ('y')) {
+		        		//Implement Checkout
+		        		//add to bill
+		        		//code here
+		        	} 
+		        	break;
+		        case 6:
+		        	garbage = scan.nextLine();
+		        	System.out.println("You have chosen " + productList.get(5));
+		        	//Add to shopping cart here!!
+		        	System.out.println("Will that be all for you today? (Please enter Yes(Y) or No(N))");
+		        	
+		        	continueAnswer = scan.nextLine();
+		        	if (Character.toLowerCase(continueAnswer.charAt(0)) == ('y')) {
+		        		//Implement Checkout
+		        		//add to bill
+		        		//code here
+		        	} 
+		        	break;
+		        case 7:
+		        	garbage = scan.nextLine();
+		        	System.out.println("You have chosen " + productList.get(6));
+		        	//Add to shopping cart here!!
+		        	System.out.println("Will that be all for you today? (Please enter Yes(Y) or No(N))");
+		        	
+		        	continueAnswer = scan.nextLine();
+		        	if (Character.toLowerCase(continueAnswer.charAt(0)) == ('y')) {
+		        		//Implement Checkout
+		        		//add to bill
+		        		//code here
+		        	} 
+		        	break;
+		        case 8:
+		        	garbage = scan.nextLine();
+		        	System.out.println("You have chosen " + productList.get(7));
+		        	//Add to shopping cart here!!
+		        	System.out.println("Will that be all for you today? (Please enter Yes(Y) or No(N))");
+		        	
+		        	continueAnswer = scan.nextLine();
+		        	if (Character.toLowerCase(continueAnswer.charAt(0)) == ('y')) {
+		        		//Implement Checkout
+		        		//add to bill
+		        		//code here
+		        	} 
+		        	break;
+		        case 9:
+		        	garbage = scan.nextLine();
+		        	System.out.println("You have chosen " + productList.get(8));
+		        	//Add to shopping cart here!!
+		        	System.out.println("Will that be all for you today? (Please enter Yes(Y) or No(N))");
+		        	
+		        	continueAnswer = scan.nextLine();
+		        	if (Character.toLowerCase(continueAnswer.charAt(0)) == ('y')) {
+		        		//Implement Checkout
+		        		//add to bill
+		        		//code here
+		        	} 
+		        	break;
+		        case 10:
+		        	garbage = scan.nextLine();
+		        	System.out.println("You have chosen " + productList.get(9));
+		        	//Add to shopping cart here!!
+		        	System.out.println("Will that be all for you today? (Please enter Yes(Y) or No(N))");
+		        	
+		        	continueAnswer = scan.nextLine();
+		        	if (Character.toLowerCase(continueAnswer.charAt(0)) == ('y')) {
+		        		//Implement Checkout
+		        		//add to bill
+		        		//code here
+		        	} 
+		        	break;
+		        case 11:
+		        	garbage = scan.nextLine();
+		        	System.out.println("You have chosen " + productList.get(10));
+		        	//Add to shopping cart here!!
+		        	System.out.println("Will that be all for you today? (Please enter Yes(Y) or No(N))");
+		        	
+		        	continueAnswer = scan.nextLine();
+		        	if (Character.toLowerCase(continueAnswer.charAt(0)) == ('y')) {
+		        		//Implement Checkout
+		        		//add to bill
+		        		//code here
+		        	} 
+		        	break;
+		        case 12:
+		        	garbage = scan.nextLine();
+		        	System.out.println("You have chosen " + productList.get(11));
+		        	//Add to shopping cart here!!
+		        	System.out.println("Will that be all for you today? (Please enter Yes(Y) or No(N))");
+		        	
+		        	continueAnswer = scan.nextLine();
+		        	if (Character.toLowerCase(continueAnswer.charAt(0)) == ('y')) {
+		        		//Implement Checkout
+		        		//add to bill
+		        		//code here
+		        	} 
+		        	break;
+		     } 
+	     }      
+	} 
 }
+
 
