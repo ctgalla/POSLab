@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 
 public interface Credit  {
 	
@@ -5,8 +7,7 @@ public interface Credit  {
 	void setCardName(String cardName);
 	void setCCNumber(long ccNumber);
 	long getCCNumber();
-	String getExpDate();
-	void setExpDate(String expDate);
+	void setExpDate(LocalDate expDate);
 	short getCVV();
 	void setCVV(short cvv);
 }

@@ -1,14 +1,22 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 
 public class Receipt implements Cash, Credit, Check {
-	
+	public static void main(String[] args) {
+		
+	}
 	//Tax variables
 	private double tax;
-	final double SALESTAX = 0.06;
+	final double SALESTAX = .06;
 	
 	//Total variables
 	private double subtotal;
 	private double total;
 	private double grandTotal;
+	private static double x;
 	
 	//Cash variables
 	private double cashTendered;
@@ -17,11 +25,13 @@ public class Receipt implements Cash, Credit, Check {
 	//Credit variables 
 	private String cardName;
 	private long ccNumber;
-	private String expDate;
+	private LocalDate expDate;
 	private short cvv;
 	
 	//Check variable
 	private String checkNumber;
+	private ArrayList<Double> quantities;
+	private ArrayList<Double> priceList;
 	
 	//====================Cash Methods============================//
 	@Override
@@ -54,13 +64,12 @@ public class Receipt implements Cash, Credit, Check {
 		return ccNumber;
 	}
 
-	@Override
-	public void setExpDate(String expDate) {
+	
+	public void setExpDate(LocalDate expDate) {
 		this.expDate = expDate;
 	}
 
-	@Override
-	public String getExpDate() {
+	public LocalDate getExpDate() {
 		return expDate;
 	}
 
@@ -83,22 +92,30 @@ public class Receipt implements Cash, Credit, Check {
 	public String getCheckNumber() {
 		return checkNumber;
 	}
-	//====================Calculation Methods=====================//
-	/*
-	private void calcPrice() {
-		// calculate subtotal
-		for (Product prod : itemsOrdered) {
-			subtotal = subtotal + (prod.getPrice() * prod.getQuantity());
-		}
-		// calculate tax
-		tax = subtotal * SALESTAX;
-
-		// calculate grand total
-		grandTotal = subtotal + tax;
+	//====================ArrayList Methods=======================//
+	public void setPriceList(ArrayList<Double> priceList) {
+		this.priceList = priceList;
 	}
-	*/
+	
+	public ArrayList<Double> getPriceList() {
+		return priceList;
+	}
+	
+	public void setQuantities(ArrayList<Double> quantities) {
+		this.quantities = quantities;
+	}
+	
+	public ArrayList<Double> getQuantities(ArrayList<Double> quantities) {
+		return quantities;
+	}
+	//====================Calculation Methods=====================//
 	public double getSubtotal() {
-		//calcPrice();
+		return subtotal;
+	}
+	
+	public double calcSubTotal(ArrayList<Double> priceList, ArrayList<Double> quantities) {
+		for (int x = 0; x < priceList.size(); x++)
+		subtotal += priceList.get(x) * quantities.get(x);
 		return subtotal;
 	}
 	
@@ -106,8 +123,13 @@ public class Receipt implements Cash, Credit, Check {
 		this.subtotal = subtotal;
 	}
 	
+	public double calcTax(double subtotal) {
+		this.subtotal = subtotal;
+		double tax = subtotal * SALESTAX;
+		return tax;
+	}
+	
 	public double getTax() {
-		//calcPrice();
 		return tax;
 	}
 	
@@ -115,13 +137,28 @@ public class Receipt implements Cash, Credit, Check {
 		this.tax = tax;
 	}
 	
-	public double getGrandTotal() {
-		//calcPrice();
-		return grandTotal;
+	public double calcTotal(double subtotal, double tax) {
+		double total = tax + subtotal;
+		return total;
 	}
-	
-	public void setGrandTotal(double grandTotal) {
-		this.grandTotal = grandTotal;
+	public double getTotal() {
+		return total;
+	}
+//	
+//	public void setDiffTotal(double roundedDiffAmount) {
+//		x = roundedDiffAmount;
+//	}
+//	
+//	public double getDiffTotal() {
+//		return x;
+//	}
+//	
+	public double round(double x, int places) {
+	    if (places < 0) throw new IllegalArgumentException();
+
+	    BigDecimal bd = new BigDecimal(x);
+	    bd = bd.setScale(places, RoundingMode.HALF_UP);
+	    return bd.doubleValue();
 	}
 	//~~~~~~~~~~~~~~~~~~~~Cash Calculation Methods~~~~~~~~~~~~~~~~//
 	
